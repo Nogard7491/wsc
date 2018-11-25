@@ -18,7 +18,7 @@ Wsc is simple to use, blazing fast and thoroughly tested websocket client.
 ## Installing
 
 ```
-npm install wsc --save
+npm install @nogard7491/wsc --save
 ```
 
 ## Requiring

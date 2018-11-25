@@ -707,4 +707,4 @@ function () {
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=wsc-1.0.0.js.map
+//# sourceMappingURL=wsc-1.0.1.js.map
