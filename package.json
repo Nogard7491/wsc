@@ -1,0 +1,48 @@
+{
+  "name": "@nogard7491/wsc",
+  "version": "1.0.0",
+  "keywords": [
+    "wsc",
+    "ws",
+    "websocket",
+    "socket",
+    "realtime",
+    "connection",
+    "browser"
+  ],
+  "description": "Simple to use, blazing fast and thoroughly tested websocket client.",
+  "main": "./dist/wsc-1.0.0.min.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "babel-loader": "^8.0.4",
+    "chai": "^4.2.0",
+    "clean-webpack-plugin": "^1.0.0",
+    "jsdom": "^13.0.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^5.2.0",
+    "mocha.parallel": "^0.15.6",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "scripts": {
+    "build": "webpack --mode=production",
+    "test": "mocha test/index.js --timeout 5000"
+  },
+  "author": "Nogard7491 <nogard7491@gmail.com> (https://nogard.ru)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nogard7491/wsc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nogard7491/wsc/issues"
+  },
+  "homepage": "https://github.com/Nogard7491/wsc#readme"
+}
