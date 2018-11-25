@@ -1,6 +1,6 @@
 {
   "name": "@nogard7491/wsc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [
     "wsc",
     "ws",
@@ -11,7 +11,7 @@
     "browser"
   ],
   "description": "Simple to use, blazing fast and thoroughly tested websocket client.",
-  "main": "./dist/wsc-1.0.1.min.js",
+  "main": "./dist/wsc-1.0.2.min.js",
   "directories": {
     "lib": "lib",
     "test": "test"
