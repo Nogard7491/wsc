@@ -26,7 +26,7 @@ npm install @nogard7491/wsc --save
 ### Via tag "script"
 
 ```
-<script src="./dist/wsc-2.0.0.min.js"></script>
+<script src="./dist/wsc-2.0.1.min.js"></script>
 <script>
     var wsc = new Wsc.default('ws://echo.websocket.org');
 </script>
@@ -161,7 +161,7 @@ wsc.off(function() {
 
 #### Removed
 
-- Old methods "onOpening", "onOpen", "onMessage", "onClosing",
+- Old methods "onOpening", "onOpen", "onReady", "onMessage", "onClosing",
 "onClose" and "onError"
 
 ### [v1.0.0 (2018-11-25)](https://github.com/Nogard7491/wsc/releases/tag/v1.0.0)
