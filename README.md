@@ -138,7 +138,7 @@ let eventId = wsc.on('close', function(event) {
     console.log('close', event);
 });
 
-// removes event listeners by identifier
+// removes event listener by identifier
 wsc.off(eventId);
 
 // removes event listeners by type
