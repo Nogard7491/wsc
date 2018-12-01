@@ -8,22 +8,19 @@ module.exports = function (Wsc, wsc, websocketConnectionUrl) {
     parallel('Тестирование установки соединения и соответствующих событий', function () {
 
         it('Установка и отработка предустановленного события "opening"', function (done) {
-            wsc.onOpening(eventType => {
-                assert.equal(eventType, 'opening');
+            wsc.on('opening', () => {
                 done();
             });
         });
 
         it('Установка и отработка предустановленного события "open"', function (done) {
-            wsc.onOpen(eventType => {
-                assert.equal(eventType, 'open');
+            wsc.on('open', () => {
                 done();
             });
         });
 
         it('Установка и отработка предустановленного события "ready"', function (done) {
-            wsc.onReady(eventType => {
-                assert.equal(eventType, 'ready');
+            wsc.on('ready', () => {
                 done();
             });
         });
@@ -33,16 +30,14 @@ module.exports = function (Wsc, wsc, websocketConnectionUrl) {
         });
 
         it('Установка и отработка пост установленного события "open"', function (done) {
-            wsc.onOpen(function (eventType, event) {
-                assert.equal(eventType, 'open');
+            wsc.on('open', function (event) {
                 assert.instanceOf(this, Wsc);
                 done();
             });
         });
 
         it('Установка и отработка пост установленного события "ready"', function (done) {
-            wsc.onReady(function (eventType, event) {
-                assert.equal(eventType, 'ready');
+            wsc.on('ready', function (event) {
                 assert.instanceOf(this, Wsc);
                 done();
             });

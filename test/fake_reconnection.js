@@ -33,15 +33,13 @@ module.exports = function (Wsc, websocketFakeConnectionUrl) {
             });
 
             it('Установка и отработка пост установленного события "close"', function (done) {
-                wsc.onClose(eventType => {
-                    assert.equal(eventType, 'close');
+                wsc.on('close', () => {
                     done();
                 });
             });
 
             it('Установка и отработка пост установленного события "opening"', function (done) {
-                wsc.onOpening(eventType => {
-                    assert.equal(eventType, 'opening');
+                wsc.on('opening', () => {
                     done();
                 });
             });

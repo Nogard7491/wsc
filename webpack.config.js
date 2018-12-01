@@ -19,10 +19,10 @@ module.exports = (env, argv) => {
     const DEVELOPMENT_MODE = 'development';
 
     /** @const {string} Название библиотеки. */
-    const LIBRARY_NAME = 'wsc';
+    const LIBRARY_NAME = 'Wsc';
 
     /** @type {string} Название файла для входа. */
-    let entryFileName = LIBRARY_NAME + '-' + packageVersion;
+    let entryFileName = LIBRARY_NAME.toLowerCase() + '-' + packageVersion;
 
     /** @type {{}} Файлы для входа и пути к ним. */
     let entry = {};

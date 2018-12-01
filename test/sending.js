@@ -10,8 +10,7 @@ module.exports = function (Wsc, wsc) {
     parallel('Тестирование отправки сообщений и соответствующих событий', function () {
 
         it(`Установка и отработка псевдо предустановленного события "message", получение сообщения "${MESSAGE_DATA}"`, function (done) {
-            wsc.onMessage((eventType, event) =>  {
-                assert.equal(eventType, 'message');
+            wsc.on('message', (event) =>  {
                 assert.equal(event.data, MESSAGE_DATA);
                 done();
             });
@@ -23,8 +22,7 @@ module.exports = function (Wsc, wsc) {
         });
 
         it(`Установка и отработка пост установленного события "message", получение сообщения "${MESSAGE_DATA}"`, function (done) {
-            wsc.onMessage(function (eventType, event) {
-                assert.equal(eventType, 'message');
+            wsc.on('message', function (event) {
                 assert.equal(event.data, MESSAGE_DATA);
                 assert.instanceOf(this, Wsc);
                 done();

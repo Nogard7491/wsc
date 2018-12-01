@@ -26,7 +26,7 @@ npm install @nogard7491/wsc --save
 ### Via tag "script"
 
 ```
-<script src="./dist/wsc-1.0.2.min.js"></script>
+<script src="./dist/wsc-2.0.0.min.js"></script>
 <script>
     var wsc = new Wsc.default('ws://echo.websocket.org');
 </script>
@@ -60,36 +60,34 @@ npm install @nogard7491/wsc --save
 /** @type {Wsc} wsc Websocket client. */
 var wsc = new Wsc.default(
     'ws://echo.websocket.org', // connecting url
-    '', // protocols
+    undefined, // protocols
 );
 
-// opening event handler
 // triggered when trying to connect through a method call "connect"
-wsc.onOpening(function(eventType) {
-    console.log(eventType, this.readyState);
+wsc.on('opening', function() {
+    console.log('opening', this.readyState);
 });
 
-// open event handler
-wsc.onOpen(function(eventType, event) {
-    console.log(eventType, this.readyState);
+// triggered when opening a connection
+wsc.on('open', function(event) {
+    console.log('open', this.readyState);
 });
 
-// message event handler
-wsc.onMessage(function(eventType, event) {
-    console.log(eventType, this.readyState, '"' + event.data + '"');
+// triggered when a message is received
+wsc.on('message', function(event) {
+    console.log('message', this.readyState, '"' + event.data + '"');
     this.close();
 });
 
-// closing event handler
 // triggered when trying to connect through a method call "close"
-wsc.onClosing(function(eventType) {
-    console.log(eventType, this.readyState);
+wsc.on('closing', function() {
+    console.log('closing', this.readyState);
 });
 
 
-// close event handler
-wsc.onClose(function(eventType, event) {
-    console.log(eventType, this.readyState);
+// triggered when closing a connection
+wsc.on('close', function(event) {
+    console.log('close', this.readyState);
 });
 
 wsc.connect();
@@ -111,39 +109,62 @@ var wsc = new Wsc.default('ws://echo.websocket.org', undefined, {
     }
 });
 
-// opening event handler
 // triggered when trying to connect through a method call "connect"
-wsc.onOpening(function(eventType) {
-    console.log(eventType);
+wsc.on('opening', function() {
+    console.log('opening');
 });
 
-// closing event handler
 // triggered when trying to connect through a method call "close"
-wsc.onClosing(function(eventType) {
-    console.log(eventType);
+wsc.on('closing', function() {
+    console.log('closing');
 });
 
 wsc.connect();
 wsc.send('some data');
 
-// open event handler
-wsc.onOpen(function(eventType, event) {
-    console.log(eventType, event);
+// triggered when opening a connection
+wsc.on('open', function(event) {
+    console.log('open', event);
 });
 
-// message event handler
-wsc.onMessage(function(eventType, event) {
-    console.log(eventType, event);
+// triggered when a message is received
+wsc.on('message', function(event) {
+    console.log('message', event);
     this.close();
 });
 
-// close event handler
-wsc.onClose(function(eventType, event) {
-    console.log(eventType, event);
+// triggered when trying to connect through a method call "close"
+let eventId = wsc.on('close', function(event) {
+    console.log('close', event);
+});
+
+// removes event listeners by identifier
+wsc.off(eventId);
+
+// removes event listeners by type
+wsc.off('open');
+
+// removes event listeners by handler
+wsc.off(function() {
+    console.log('closing');
 });
 ```
 
 ## Changelog
+
+### [v2.0.0 (2018-12-01)](https://github.com/Nogard7491/wsc/releases/tag/v2.0.0)
+
+#### Added
+
+- New methods "on" and "off" for adding and removing event listeners
+- Getting event listener identifier
+
+#### Removed
+
+- Old methods "onOpening", "onOpen", "onMessage", "onClosing",
+"onClose" and "onError"
+
+### [v1.0.0 (2018-11-25)](https://github.com/Nogard7491/wsc/releases/tag/v1.0.0)
 
 ## License
 

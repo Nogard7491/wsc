@@ -8,15 +8,13 @@ module.exports = function (Wsc, wsc) {
     parallel('Тестирование переподключения соединения', function () {
 
         it('Установка и отработка предустановленного события "close"', function (done) {
-            wsc.onClose(eventType => {
-                assert.equal(eventType, 'close');
+            wsc.on('close', () => {
                 done();
             });
         });
 
         it('Установка и отработка предустановленного события "open"', function (done) {
-            wsc.onOpen(eventType => {
-                assert.equal(eventType, 'open');
+            wsc.on('open', () => {
                 done();
             });
         });
