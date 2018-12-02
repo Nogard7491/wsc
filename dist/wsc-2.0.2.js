@@ -1121,4 +1121,4 @@ function () {
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=wsc-2.0.1.js.map
+//# sourceMappingURL=wsc-2.0.2.js.map

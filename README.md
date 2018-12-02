@@ -26,7 +26,7 @@ npm install @nogard7491/wsc --save
 ### Via tag "script"
 
 ```
-<script src="./dist/wsc-2.0.1.min.js"></script>
+<script src="./dist/wsc-2.0.2.min.js"></script>
 <script>
     var wsc = new Wsc.default('ws://echo.websocket.org');
 </script>
@@ -133,7 +133,7 @@ wsc.on('message', function(event) {
     this.close();
 });
 
-// triggered when trying to connect through a method call "close"
+// triggered when closing a connection
 let eventId = wsc.on('close', function(event) {
     console.log('close', event);
 });
