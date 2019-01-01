@@ -26,7 +26,7 @@ npm install @nogard7491/wsc --save
 ### Via tag "script"
 
 ```
-<script src="./dist/wsc-2.0.2.min.js"></script>
+<script src="./node_modules/@nogard7491/wsc/dist/wsc-2.0.3.min.js"></script>
 <script>
     var wsc = new Wsc.default('ws://echo.websocket.org');
 </script>
@@ -36,7 +36,7 @@ npm install @nogard7491/wsc --save
 
 ```
 <script>
-    const Wsc = require('wsc').default;
+    const Wsc = require('@nogard7491/wsc').default;
 
     const wsc = new Wsc('ws://echo.websocket.org');
 </script>
@@ -46,7 +46,7 @@ npm install @nogard7491/wsc --save
 
 ```
 <script>
-    import Wsc from 'wsc';
+    import Wsc from '@nogard7491/wsc';
 
     const wsc = new Wsc('ws://echo.websocket.org');
 </script>
