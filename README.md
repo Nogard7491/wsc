@@ -26,7 +26,7 @@ npm install @nogard7491/wsc --save
 ### Via tag "script"
 
 ```
-<script src="./node_modules/@nogard7491/wsc/dist/wsc-2.0.3.min.js"></script>
+<script src="./node_modules/@nogard7491/wsc/dist/wsc-2.0.4.min.js"></script>
 <script>
     var wsc = new Wsc.default('ws://echo.websocket.org');
 </script>

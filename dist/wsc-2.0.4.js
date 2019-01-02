@@ -848,18 +848,22 @@ function () {
       var code = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1000;
       var reason = arguments.length > 1 ? arguments[1] : undefined;
 
-      this._executeCustomEvents('closing');
+      if (!(this._webSocket instanceof window.WebSocket)) {
+        throw new Error('WebSocket instance is not defined');
+      } else {
+        this._executeCustomEvents('closing');
 
-      this._messageRepository.clear();
+        this._messageRepository.clear();
 
-      if (this._options.reconnection) {
-        this._currentAttempts = this._options.reconnectionOptions.attempts;
-      }
+        if (this._options.reconnection) {
+          this._currentAttempts = this._options.reconnectionOptions.attempts;
+        }
 
-      try {
-        this._webSocket.close(code, reason);
-      } catch (error) {
-        throw new Error(error.message);
+        try {
+          this._webSocket.close(code, reason);
+        } catch (error) {
+          throw new Error(error.message);
+        }
       }
     }
     /**
@@ -1121,4 +1125,4 @@ function () {
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=wsc-2.0.3.js.map
+//# sourceMappingURL=wsc-2.0.4.js.map
